@@ -1,4 +1,3 @@
-#encoding: utf-8
 class Character
   attr_accessor :name, :hp, :offense, :defense
 
