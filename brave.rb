@@ -2,13 +2,12 @@ require_relative "character.rb"
 
 class Brave < Character
   def attack(monster)
-    hit_point = offense - monster.defense / 2
+    damage = offense - monster.defense / 2
+    
     puts "#{name}の攻撃！"
-    puts "#{monster.name}に#{hit_point}のダメージを与えた！"
-    monster.hp -= hit_point
+    puts "#{monster.name}に#{damage}のダメージを与えた！"
 
-    if monster.hp < 0
-      monster.hp = 0
-    end
+    monster.hp -= damage
+    monster.hp = 0 if monster.hp < 0     
   end
 end
