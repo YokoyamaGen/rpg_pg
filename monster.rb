@@ -1,12 +1,21 @@
 require_relative "character.rb"
 
 class Monster < Character
+  DAMAGE_CALC = 2
+
   def attack(brave)
-    damage = @offense - brave.defense / 2
+    damage = @offense - brave.defense / DAMAGE_CALC
 
-    puts "#{@name}の攻撃！"
-    puts "#{brave.name}は#{damage}のダメージを受けた！"
+    attack_msg(attack_to: brave, battle_reuslt: damage)
 
+    cause_damage(attack_to: brave, battle_reuslt: damage)
+  end
+
+  private
+
+  def cause_damage(**params)
+    brave = params[:attack_to]
+    damage = params[:battle_reuslt]
     brave.hp -= damage
     brave.hp = 0 if brave.hp < 0
   end
