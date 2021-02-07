@@ -18,7 +18,7 @@ module MessageDialog
     damage = params[:battle_reuslt]
   
     puts "#{@name}の攻撃！"
-    if character.class == Monster
+    if character.kind_of?(Monster)
       puts "#{character.name}に#{damage}のダメージを与えた！"
     else
       puts "#{character.name}は#{damage}のダメージを受けた！" 
