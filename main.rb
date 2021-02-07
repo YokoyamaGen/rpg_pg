@@ -6,8 +6,7 @@ monster_array = [
   {name: "アークデーモン", hp: 210, offense: 140, defense: 80},
   {name: "シドー", hp: 250, offense: 255, defense: 255}
 ]
-monster_info = monster_array.sample
-monster = Monster.new(monster_info)
+monster = Monster.new(monster_array.sample)
 
 brave = Brave.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
 
